@@ -1,0 +1,15 @@
+{
+  "name": "angular2-codeweek",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular2": "2.0.0-alpha.37",
+    "es6-module-loader": "^0.16",
+    "systemjs": "^0.18",
+    "traceur": "0.0.91",
+    "live-server": "0.8.1",
+    "typescript": "1.6.2",
+    "bootstrap": "3.3.5",
+    "reveal.js": "3.1.0",
+    "tsd": "0.6.4"
+  }
+}
