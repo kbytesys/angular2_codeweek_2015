@@ -1,1 +1,0 @@
-tsd install angular2 angular2/http es6-promise rx rx-lite --save

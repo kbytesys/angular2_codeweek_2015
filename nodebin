@@ -1,1 +1,0 @@
-alias nodebin='export PATH=$(npm bin):$PATH'

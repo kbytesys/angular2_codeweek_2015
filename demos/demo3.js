@@ -84,4 +84,4 @@ angular2_1.bootstrap(DemoApp2Compnent, [
     http_1.HTTP_BINDINGS,
     LivescoreService
 ]);
-//# sourceMappingURL=demo2.js.map
+//# sourceMappingURL=demo3.js.map
