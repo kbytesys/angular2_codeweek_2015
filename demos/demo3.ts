@@ -6,6 +6,7 @@ import {Http, HTTP_BINDINGS} from 'angular2/http';
 class LivescoreService {
     name: string;
     http: Http;
+    data: JSON;
     constructor(http: Http) {
         this.name = 'Pascal';
         this.http = http;
@@ -13,6 +14,14 @@ class LivescoreService {
 
     getName() {
         return this.name;
+    }
+
+    searchMatch(searchString: string) {
+
+    }
+
+    getJsonData() {
+
     }
 }
 

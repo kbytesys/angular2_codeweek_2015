@@ -20,6 +20,10 @@ var LivescoreService = (function () {
     LivescoreService.prototype.getName = function () {
         return this.name;
     };
+    LivescoreService.prototype.searchMatch = function (searchString) {
+    };
+    LivescoreService.prototype.getJsonData = function () {
+    };
     LivescoreService = __decorate([
         angular2_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
