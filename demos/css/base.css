@@ -6,3 +6,19 @@ body {
 #demo1-table th, #demo1-table td {
     text-align: center;
 }
+
+.centered-text {
+    text-align: center;
+}
+
+.no-content, .no-content:after, .no-content:before {
+    content: none;
+}
+
+.livedate {
+    text-align: left;
+}
+
+.livegroup {
+    margin-bottom: 3em;
+}

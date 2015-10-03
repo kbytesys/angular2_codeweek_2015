@@ -16,7 +16,7 @@ var LivescoreMatch = (function () {
     }
     LivescoreMatch.prototype.onInit = function () {
         if (this.data['status'] == 'notstarted') {
-            this.scorea = this.scoreb = '-';
+            this.scorea = this.scoreb = 'x';
         }
         else {
             this.scorea = this.data['scorea'];
@@ -31,8 +31,7 @@ var LivescoreMatch = (function () {
             properties: ['data']
         }),
         angular2_1.View({
-            template: "\n    <td>{{ teama }}</td>\n    <td>{{ scorea }} - {{ scoreb }}</td>\n    <td>{{ teamb }}</td>\n    ",
-            replace: true
+            template: "\n    <div class=\"row centered-text no-content\">\n        <div class=\"col-md-4\">{{ teama }}</div>\n        <div class=\"col-md-4\">{{ scorea }} - {{ scoreb }}</div>\n        <div class=\"col-md-4\">{{ teamb }}</div>\n    </div>\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], LivescoreMatch);
@@ -51,7 +50,7 @@ var DayGroupComponent = (function () {
             properties: ['data', 'matches']
         }),
         angular2_1.View({
-            template: "\n    <h4>{{ date }}</h4>\n    <table id=\"demo1-table\" class=\"table table-striped\">\n        <thead>\n          <tr>\n            <th>Squadra A</th>\n            <th>Risultato</th>\n            <th>Squadra B</th>\n          </tr>\n        </thead>\n        <tbody>\n            <tr>\n                <!-- L'elemento livescore-match viene aggiunto! -->\n                <livescore-match *ng-for=\"#m of matches_data\" [data]=\"m\">\n                </livescore-match>\n            </tr>\n        </tbody>\n    </table>\n  ",
+            template: "\n    <div class=\"row livegroup\">\n        <div class=\"row centered-text\">\n            <h4 class=\"livedate\">{{ date }}</h4>\n            <div class=\"col-md-4\"><b>Squadra A</b></div>\n            <div class=\"col-md-4\"><b>Risultato</b></div>\n            <div class=\"col-md-4\"><b>Squadra B</b></div>\n        </div>\n        <hr>\n        <livescore-match class=\"no-content\" *ng-for=\"#m of matches_data\" [data]=\"m\">\n        </livescore-match>\n    </div>\n    ",
             directives: [angular2_1.NgFor, LivescoreMatch]
         }), 
         __metadata('design:paramtypes', [])
@@ -85,8 +84,11 @@ var AppComponent = (function () {
         clearInterval(this.polling_id);
     };
     AppComponent.prototype.elaborateJson = function (json_data) {
-        this.json_data = json_data;
-        this.dategroup_data = json_data.dategroups;
+        if (json_data.lastupdate != this.last_update_str) {
+            this.last_update_str = json_data.lastupdate;
+            this.json_data = json_data;
+            this.dategroup_data = json_data.dategroups;
+        }
     };
     AppComponent = __decorate([
         angular2_1.Component({

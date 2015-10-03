@@ -7,11 +7,9 @@ import {XHRBackend, BaseRequestOptions, Http, HTTP_BINDINGS} from 'angular2/http
 })
 @View({
     template: `
-    <div class="row centered-text no-content">
-        <div class="col-md-4">{{ teama }}</div>
-        <div class="col-md-4">{{ scorea }} - {{ scoreb }}</div>
-        <div class="col-md-4">{{ teamb }}</div>
-    </div>
+    <td>{{ teama }}</td>
+    <td>{{ scorea }} - {{ scoreb }}</td>
+    <td>{{ teamb }}</td>
     `
 
 })
@@ -25,7 +23,7 @@ class LivescoreMatch {
 
     onInit() {
         if(this.data['status'] == 'notstarted') {
-            this.scorea = this.scoreb = 'x'
+            this.scorea = this.scoreb = '-'
         }
         else {
             this.scorea = this.data['scorea'];
@@ -43,18 +41,24 @@ class LivescoreMatch {
 })
 @View({
     template: `
-    <div class="row livegroup">
-        <div class="row centered-text">
-            <h4 class="livedate">{{ date }}</h4>
-            <div class="col-md-4"><b>Squadra A</b></div>
-            <div class="col-md-4"><b>Risultato</b></div>
-            <div class="col-md-4"><b>Squadra B</b></div>
-        </div>
-        <hr>
-        <livescore-match class="no-content" *ng-for="#m of matches_data" [data]="m">
-        </livescore-match>
-    </div>
-    `,
+    <h4>{{ date }}</h4>
+    <table id="demo1-table" class="table table-striped">
+        <thead>
+          <tr>
+            <th>Squadra A</th>
+            <th>Risultato</th>
+            <th>Squadra B</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <!-- L'elemento livescore-match viene aggiunto! -->
+                <livescore-match *ng-for="#m of matches_data" [data]="m">
+                </livescore-match>
+            </tr>
+        </tbody>
+    </table>
+  `,
     directives: [NgFor, LivescoreMatch]
 })
 class DayGroupComponent {
@@ -95,7 +99,6 @@ export class AppComponent {
     json_data: JSON;
     dategroup_data: Array<JSON>;
     polling_id: number;
-    last_update_str: string;
 
     // https://github.com/angular/angular/issues/1858
     // constructor(http: Http, @Attribute('url') url: string) {
@@ -124,11 +127,8 @@ export class AppComponent {
     }
 
     elaborateJson(json_data): void {
-        if (json_data.lastupdate != this.last_update_str) {
-            this.last_update_str = json_data.lastupdate
-            this.json_data = json_data;
-            this.dategroup_data = json_data.dategroups;
-        }
+        this.json_data = json_data;
+        this.dategroup_data = json_data.dategroups;
     }
 }
 
