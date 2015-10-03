@@ -51,7 +51,7 @@ var AppComponent = (function () {
         // Attenzione all'ordine delle chiamate!
         request.subscribeOnError(function (error) { return alert(error); });
         request.subscribeOnNext(function (data) { return _this.elaborateJson(data); });
-        request.subscribeOnCompleted(function () { return console.debug(JSON.stringify(_this.json_data)); });
+        request.subscribeOnCompleted(function () { return console.debug(_this.last_update_str); });
     };
     AppComponent.prototype.stopFetch = function () {
         clearInterval(this.polling_id);
@@ -59,7 +59,6 @@ var AppComponent = (function () {
     AppComponent.prototype.elaborateJson = function (json_data) {
         if (json_data.lastupdate != this.last_update_str) {
             this.last_update_str = json_data.lastupdate;
-            this.json_data = json_data;
             this.dategroup_data = json_data.dategroups;
         }
     };
@@ -74,7 +73,7 @@ var AppComponent = (function () {
             directives: [
                 angular2_1.NgFor,
             ],
-            // Ignora l'errore fino alla prossima alpha di Angular2
+            // TSC Error BUG https://github.com/angular/angular/issues/4279
             pipes: [MatchResultStringPipe],
             templateUrl: 'demo2-template.html',
         }), 

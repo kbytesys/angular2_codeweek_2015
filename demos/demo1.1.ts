@@ -96,7 +96,6 @@ class DayGroupComponent {
 })
 export class AppComponent {
     url: string;
-    json_data: JSON;
     dategroup_data: Array<JSON>;
     polling_id: number;
     last_update_str: string;
@@ -120,7 +119,7 @@ export class AppComponent {
         // Attenzione all'ordine delle chiamate!
         request.subscribeOnError(error => alert(error))
         request.subscribeOnNext(data => this.elaborateJson(data))
-        request.subscribeOnCompleted(() => console.debug(JSON.stringify(this.json_data)))
+        request.subscribeOnCompleted(() => console.debug(JSON.stringify(this.last_update_str)))
     }
 
     stopFetch(): void {
@@ -130,7 +129,6 @@ export class AppComponent {
     elaborateJson(json_data): void {
         if (json_data.lastupdate != this.last_update_str) {
             this.last_update_str = json_data.lastupdate
-            this.json_data = json_data;
             this.dategroup_data = json_data.dategroups;
         }
     }
