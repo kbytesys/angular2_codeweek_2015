@@ -7,9 +7,11 @@ import {XHRBackend, BaseRequestOptions, Http, HTTP_BINDINGS} from 'angular2/http
 })
 @View({
     template: `
-    <td>{{ teama }}</td>
-    <td>{{ scorea }} - {{ scoreb }}</td>
-    <td>{{ teamb }}</td>
+    <tr>
+        <td>{{ teama }}</td>
+        <td>{{ scorea }} - {{ scoreb }}</td>
+        <td>{{ teamb }}</td>
+    </tr>
     `
 
 })
@@ -51,11 +53,9 @@ class LivescoreMatch {
           </tr>
         </thead>
         <tbody>
-            <tr>
-                <!-- L'elemento livescore-match viene aggiunto! -->
-                <livescore-match *ng-for="#m of matches_data" [data]="m">
-                </livescore-match>
-            </tr>
+            <!-- L'elemento livescore-match viene aggiunto! -->
+            <livescore-match *ng-for="#m of matches_data" [data]="m">
+            </livescore-match>
         </tbody>
     </table>
   `,
@@ -99,6 +99,7 @@ export class AppComponent {
     json_data: JSON;
     dategroup_data: Array<JSON>;
     polling_id: number;
+    last_update_str: string;
 
     // https://github.com/angular/angular/issues/1858
     // constructor(http: Http, @Attribute('url') url: string) {
@@ -127,8 +128,11 @@ export class AppComponent {
     }
 
     elaborateJson(json_data): void {
-        this.json_data = json_data;
-        this.dategroup_data = json_data.dategroups;
+        if (json_data.lastupdate != this.last_update_str) {
+            this.last_update_str = json_data.lastupdate
+            this.json_data = json_data;
+            this.dategroup_data = json_data.dategroups;
+        }
     }
 }
 
