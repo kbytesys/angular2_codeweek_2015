@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-md-6 col-lg-offset-3">
+        <div class="row" *ng-for="#g of dategroup_data">
+            <h4>{{ g.group_date }}</h4>
+            <table id="demo1-table" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Squadra A</th>
+                    <th>Risultato</th>
+                    <th>Squadra B</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr *ng-for="#m of g.matches">
+                        <td>{{ m.teama_name }}</td>
+                        <td>{{ m | matchResultString}}</td>
+                        <td>{{ m.teamb_name }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+

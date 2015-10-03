@@ -25,7 +25,7 @@ class LivescoreMatch {
 
     onInit() {
         if(this.data['status'] == 'notstarted') {
-            this.scorea = this.scoreb = '-'
+            this.scorea = this.scoreb = 'x'
         }
         else {
             this.scorea = this.data['scorea'];
