@@ -3,5 +3,5 @@
 node_modules/
 typings
 demos/typings
-
+demos/tsd.json
 
