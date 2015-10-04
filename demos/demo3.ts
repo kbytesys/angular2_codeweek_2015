@@ -14,8 +14,6 @@ class MatchResultStringPipe {
             return value['scorea'] + ' - ' + value['scoreb'];
         }
     }
-
-    return;
 }
 
 @Injectable()
@@ -64,7 +62,19 @@ class LivescoreService {
         return this.updated.toRx();
     }
 
-    searchMatch(searchString: string): Array<JSON> {
+    searchMatch(searchString: string): JSON {
+        var search = searchString.toLowerCase();
+        for(var i in this.dategroup_data) {
+            var g = this.dategroup_data[i];
+            for(var j in g['matches']) {
+                var match = g['matches'][j];
+                if(match.teama_name.toLowerCase() == search ||
+                   match.teamb_name.toLowerCase() == search) {
+                    return match;
+                }
+            }
+        }
+
         return null;
     }
 }
@@ -94,14 +104,45 @@ class LivescoreSummaryComponent {
 
 @Component({
     selector: 'livescore-search',
-    properties: ['name']
 })
 @View({
-    template: '<h1>Suino: Miao</h1>'
+    template: `
+    <h3>La tua squadra vince?</h3>
+    <input type="text" #search_text placeholder="Nome Squadra" (keyup.enter)="search(search_text.value)">
+    <button type="button" class="btn btn-default" (click)="search(search_text.value)">Cerca</button>
+    <p class="demo3-risultato">{{ message }}</p>
+    `
 })
 class LivescoreSearchComponent {
+    livescoreService: LivescoreService;
+    message: string;
     constructor(livescoreService: LivescoreService) {
-        //this.name = livescoreService.getName()
+        this.livescoreService = livescoreService;
+    }
+
+    search(search_text) {
+        var match = this.livescoreService.searchMatch(search_text);
+        if(match) {
+            if(match['status'] != 'live') {
+                this.message = "Partita non iniziata.";
+            }
+            else if(match['scorea'] == match['scoreb']) {
+                this.message = "La tua squadra sta pareggiando."
+            } else {
+                var is_teama = match['teama_name'].toLowerCase() == search_text.toLowerCase();
+                var scorea_major = match['scorea'] > match['scoreb'];
+                var winner = is_teama && scorea_major || (!is_teama && !scorea_major)
+                if(winner) {
+                    this.message = "La tua squadra sta vincendo! YEEEEEE!"
+                }
+                else {
+                    this.message = "La tua squadra sta perdendo! BUUUUU!"
+                }
+            }
+        }
+        else {
+            this.message = "La squadra inserita non è stata trovata";
+        }
     }
 }
 

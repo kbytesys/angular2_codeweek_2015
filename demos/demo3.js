@@ -65,6 +65,17 @@ var LivescoreService = (function () {
         return this.updated.toRx();
     };
     LivescoreService.prototype.searchMatch = function (searchString) {
+        var search = searchString.toLowerCase();
+        for (var i in this.dategroup_data) {
+            var g = this.dategroup_data[i];
+            for (var j in g['matches']) {
+                var match = g['matches'][j];
+                if (match.teama_name.toLowerCase() == search ||
+                    match.teamb_name.toLowerCase() == search) {
+                    return match;
+                }
+            }
+        }
         return null;
     };
     LivescoreService = __decorate([
@@ -98,15 +109,39 @@ var LivescoreSummaryComponent = (function () {
 })();
 var LivescoreSearchComponent = (function () {
     function LivescoreSearchComponent(livescoreService) {
-        //this.name = livescoreService.getName()
+        this.livescoreService = livescoreService;
     }
+    LivescoreSearchComponent.prototype.search = function (search_text) {
+        var match = this.livescoreService.searchMatch(search_text);
+        if (match) {
+            if (match['status'] != 'live') {
+                this.message = "Partita non iniziata.";
+            }
+            else if (match['scorea'] == match['scoreb']) {
+                this.message = "La tua squadra sta pareggiando.";
+            }
+            else {
+                var is_teama = match['teama_name'].toLowerCase() == search_text.toLowerCase();
+                var scorea_major = match['scorea'] > match['scoreb'];
+                var winner = is_teama && scorea_major || (!is_teama && !scorea_major);
+                if (winner) {
+                    this.message = "La tua squadra sta vincendo! YEEEEEE!";
+                }
+                else {
+                    this.message = "La tua squadra sta perdendo! BUUUUU!";
+                }
+            }
+        }
+        else {
+            this.message = "La squadra inserita non è stata trovata";
+        }
+    };
     LivescoreSearchComponent = __decorate([
         angular2_1.Component({
             selector: 'livescore-search',
-            properties: ['name']
         }),
         angular2_1.View({
-            template: '<h1>Suino: Miao</h1>'
+            template: "\n    <h3>La tua squadra vince?</h3>\n    <input type=\"text\" #search_text placeholder=\"Nome Squadra\" (keyup.enter)=\"search(search_text.value)\">\n    <button type=\"button\" class=\"btn btn-default\" (click)=\"search(search_text.value)\">Cerca</button>\n    <p class=\"demo3-risultato\">{{ message }}</p>\n    "
         }), 
         __metadata('design:paramtypes', [LivescoreService])
     ], LivescoreSearchComponent);

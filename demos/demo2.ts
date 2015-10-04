@@ -13,10 +13,7 @@ class MatchResultStringPipe {
             return value['scorea'] + ' - ' + value['scoreb'];
         }
     }
-
-    return;
 }
-
 
 @Component({
     selector: 'demo2',
