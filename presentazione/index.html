@@ -16,6 +16,7 @@
 
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
 
     <!-- Code syntax highlighting -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -55,6 +56,61 @@
                 Ad oggi GDG è una rete mondiale presente in 110 Nazioni.
                 Far parte di un GDG è totalmente gratuito (Enjoy!)
             </p>
+        </section>
+
+        <section>
+            <h2>Questo talk fa per me?</h2>
+            <p>Competenze di base per compredere gli argomenti trattati:</p>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Javascript</li>
+            </ul>
+        </section>
+        <section>
+            <section>
+                <h2>Lo sviluppo "canonico"</h2>
+                <p>Una buona dose di HTML...</p>
+                <pre><code data-trim contenteditable>
+    &lt;div class=&quot;content bg-tab&quot; style=&quot;padding-left:5px;padding-top:10px;&quot;&gt;
+        &lt;div class=&quot;row collapse border-bottom-1&quot;&gt;
+            &lt;div class=&quot;large-6 medium-6 small-6 columns&quot;&gt;
+                &lt;h6 class=&quot;f-yellow&quot;&gt;Nome Squadra&lt;/h6&gt;
+                </code></pre>
+                <p>... contornato da Javascript qui e li.</p>
+                <pre><code data-trim contenteditable>
+    function update_livepanel() {
+        var placeHolder = $("#live-container");
+
+        $.get("/api/v1.0/livematches",function(data,status,xhr){
+            if(oldlastupdate == null || data.lastupdate != oldlastupdate) {
+                oldlastupdate = data.lastupdate;
+                var html = template(data);
+                placeHolder.empty();
+                placeHolder.append(html);
+                placeHolder.foundation('reflow');
+        [...]
+    }
+                </code></pre>
+            </section>
+            <section>
+                <h3>Come diventa il codice:</h3>
+                <img  src="img/Indian-Phone-Systems.jpg" style="width: 80%">
+            </section>
+            <section>
+                <h3>La reazione di chi deve metterci mani</h3>
+                <img src="img/nope.gif" style="width: 60%">
+                <p>...specie se il codice è altrui <i class="fa fa-smile-o"></i></p>
+            </section>
+            <section>
+                <h2>Maggiori limiti attuali</h2>
+                <ul>
+                    <li>Difficoltà nell'organizzare id e classi per gli script</li>
+                    <li>Javascript è un linguaggio poco "ordinato"</li>
+                    <li>Confusione al crescere della dimensione</li>
+                    <li>Il codice della pagina non è semantico</li>
+                </ul>
+            </section>
         </section>
     </div>
 </div>
