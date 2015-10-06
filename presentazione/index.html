@@ -183,10 +183,33 @@ class Shape {
         </section>
         <section>
             <section>
-                Angular 2 con cenni su webcomponent ecc
+                <h2><img src="img/angular-logo.png" class="title-image"> Angular 2</h2>
+                <p>Angular 2 è un framework Javascript per lo sviluppo di applicazioni web per mobile e desktop.</p>
+                <br>
+                <p>
+                    <img src="img/XXX-300x300.png" style="vertical-align: middle !important; width: 100px !important; height: 100px !important" class="title-image">
+                    Lo sviluppo è ancora in alpha
+                    <img src="img/XXX-300x300.png" style="vertical-align: middle !important; width: 100px !important; height: 100px !important" class="title-image">
+                </p>
+                <br>
+                <p>Possibili annunci durante <a href="http://angularconnect.com/" target="_blank"><img src="img/angularconnect-shield.png" style="vertical-align: middle !important; width: 100px !important; height: auto !important" class="title-image">AngularConnect 2015</a></p>
             </section>
             <section>
-                perché non angular1?
+                <h2><img src="img/angular-logo.png" class="title-image"> Perché Angular 2 (e non 1)</h2>
+                <p>Il framework è stato riscritto da zero in Ecmascript 6, ripulendo e semplificando lo sviluppo dai
+                difetti di Angular.</p>
+                <pre><code data-trim contenteditable>
+var phonecatApp = angular.module('phonecatApp', []);
+
+phonecatApp.controller('PhoneListCtrl', function ($scope, $http) {
+    $http.get('phones/phones.json').success(function(data) {
+        $scope.phones = data;
+    });
+
+    $scope.orderProp = 'age';
+});
+                </code></pre>
+                <p>La scrittura dei componenti è più ordinata e "naturale" e addio alle variabili '$'!</p>
             </section>
             <section>
                 Angular2 e typescript
