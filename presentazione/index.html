@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/black.css" id="theme">
     <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- Code syntax highlighting -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -38,7 +39,7 @@
 <body>
 
 <div class="reveal">
-    <div class="slides">
+    <menu class="slides">
         <section>
             <h1>Sviluppare dal futuro con Angular 2</h1>
             <h3>Una pratica technical preview</h3>
@@ -49,7 +50,7 @@
         </section>
 
         <section>
-            <h2><img src="img/gdglogo.png" style="height: 1em; vertical-align: text-top; border: none; background: none; margin: 0; box-shadow: none"> GDG Cosenza</h2>
+            <h2><img src="img/gdglogo.png" class="title-image"> GDG Cosenza</h2>
             <p>
                 Il Google Developer Group (GDG) di Cosenza si pone l’obbiettivo  di creare una comunità di sviluppatori Android (ma non solo).</p>
             <img src="img/caca.png">
@@ -115,16 +116,69 @@
         </section>
         <section>
             <section>
-                <img src="img/war-layout-25e6af23.png" style="width: 60%">
+                <h2><img src="img/HTML5_Logo_256.png" class="title-image"> HTML5 e semantica</h2>
+                <img src="img/war-layout-25e6af23.png" style="width: 45%">
             </section>
             <section>
-               intruduzione web component
+                <h2><img src="img/webcomponent_logo.svg" class="title-image"> Web Components</h2>
+                <p>Strutture complesse...</p>
+                <pre><code data-trim contenteditable>
+<div class="menu-container">
+    <ul class="main-menu">
+        <li><a href="#">Voce Menu 1</a></li>
+        <li><a href="#">Voce Menu 2</a></li>
+    </ul>
+</div>
+                </code></pre>
+                <p>...acquistano semantica</p>
+                <pre><code data-trim contenteditable>
+<menu>
+    <menu-voce url="#">Voce Menu 1</menu-voce>
+    <menu-voce url="#">Voce Menu 2</menu-voce>
+</menu>
+                </code></pre>
+                <p>Per maggiori info: <a href="http://webcomponents.org" target="_blank">http://webcomponents.org</a></p>
             </section>
             <section>
-caratteristiche/pregi web components (shadow dom ecc)
+                <h2><img src="img/js.png" class="title-image"> Ecmascript 6</h2>
+                <p>Definizione di una classe in Ecmascript 5</p>
+                <pre><code data-trim contenteditable>
+var Shape = function (id, x, y) {
+    this.id = id;
+    this.move(x, y);
+};
+
+Shape.prototype.move = function (x, y) {
+    this.x = x;
+    this.y = y;
+};
+                </code></pre>
             </section>
             <section>
-acccenni emacscript6
+                <h2><img src="img/js.png" class="title-image"> Ecmascript 6</h2>
+                <p>Definizione di una classe in Ecmascript 6</p>
+                <pre><code data-trim contenteditable>
+class Shape {
+    constructor (id, x, y) {
+        this.id = id;
+        this.move(x, y);
+    }
+
+    move (x, y) {
+        this.x = x;
+        this.y = y;
+        }
+}
+                </code></pre>
+                <p>Per maggiori info: <a href="http://es6-features.org" target="_blank">http://es6-features.org</a></p>
+            </section>
+            <section>
+                <h2>Supporto nei browser <img src="img/angry-face-emoticon-5.png" class="title-image"></h2>
+                <p class="image-title"><small>Web Components</small></p>
+                <img class="image-low-margin" src="img/wc_support.png" style="width: 35%">
+                <p class="image-title"><small>Ecmascript 6</small></p>
+                <img class="image-low-margin" src="img/ecma_support.png" style="width: 45%">
+                <p>Per fortuna esistono i POLYFILLS!</p>
             </section>
         </section>
         <section>
