@@ -8,9 +8,9 @@ import {XHRBackend, BaseRequestOptions, Http, HTTP_BINDINGS} from 'angular2/http
 @View({
     template: `
     <div class="row centered-text no-content">
-        <div class="col-md-4">{{ teama }}</div>
-        <div class="col-md-4">{{ scorea }} - {{ scoreb }}</div>
-        <div class="col-md-4">{{ teamb }}</div>
+        <div class="col-xs-4">{{ teama }}</div>
+        <div class="col-xs-4">{{ scorea }} - {{ scoreb }}</div>
+        <div class="col-xs-4">{{ teamb }}</div>
     </div>
     `
 
@@ -45,10 +45,12 @@ class LivescoreMatch {
     template: `
     <div class="row livegroup">
         <div class="row centered-text">
-            <h4 class="livedate">{{ date }}</h4>
-            <div class="col-md-4"><b>Squadra A</b></div>
-            <div class="col-md-4"><b>Risultato</b></div>
-            <div class="col-md-4"><b>Squadra B</b></div>
+            <div class="col-xs-12">
+                <h4 class="livedate">{{ date }}</h4>
+            </div>
+            <div class="col-xs-4"><b>Squadra A</b></div>
+            <div class="col-xs-4"><b>Risultato</b></div>
+            <div class="col-xs-4"><b>Squadra B</b></div>
         </div>
         <hr>
         <livescore-match class="no-content" *ng-for="#m of matches_data" [data]="m">
@@ -77,7 +79,7 @@ class DayGroupComponent {
 @View({
     template: `
     <div class="row">
-        <div class="col-md-6 col-lg-offset-3">
+        <div class="col-md-6 col-md-offset-3 col-xs-12">
             <livescore-daygroup *ng-for="#g of dategroup_data" [data]="g">
             <!-- A differenza di Polymer, non possiamo innestare i children
             <livescore-match *ng-for="#m of g.matches" [data]="m"></livescore-match> -->
@@ -113,9 +115,11 @@ export class AppComponent {
             .toRx()
             .map(res => res.json());
         // Attenzione all'ordine delle chiamate!
-        request.subscribeOnError(error => alert(error))
-        request.subscribeOnNext(data => this.elaborateJson(data))
-        request.subscribeOnCompleted(() => console.debug(JSON.stringify(this.last_update_str)))
+        request.subscribeOnError(error => alert("Errore ajax " + error));
+        request.subscribeOnNext(data => this.elaborateJson(data));
+        request.subscribeOnCompleted(
+            () => console.debug(JSON.stringify(this.last_update_str))
+        );
     }
 
     stopFetch(): void {

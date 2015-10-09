@@ -76,7 +76,7 @@ var AppComponent = (function () {
             .toRx()
             .map(function (res) { return res.json(); });
         // Attenzione all'ordine delle chiamate!
-        request.subscribeOnError(function (error) { return alert(error); });
+        request.subscribeOnError(function (error) { return alert("Errore ajax " + error); });
         request.subscribeOnNext(function (data) { return _this.elaborateJson(data); });
         request.subscribeOnCompleted(function () { return console.debug(JSON.stringify(_this.last_update_str)); });
     };

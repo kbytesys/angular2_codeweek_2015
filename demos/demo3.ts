@@ -41,9 +41,11 @@ class LivescoreService {
             .toRx()
             .map(res => res.json());
         // Attenzione all'ordine delle chiamate!
-        request.subscribeOnError(error => alert(error))
-        request.subscribeOnNext(data => this.elaborateJson(data))
-        request.subscribeOnCompleted(() => console.debug(this.last_update_str))
+        request.subscribeOnError(error => alert("Errore ajax " + error));
+        request.subscribeOnNext(data => this.elaborateJson(data));
+        request.subscribeOnCompleted(
+            () => console.debug(this.last_update_str)
+        );
     }
 
     stopFetch(): void {

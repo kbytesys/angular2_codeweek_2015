@@ -31,7 +31,7 @@ var LivescoreMatch = (function () {
             properties: ['data']
         }),
         angular2_1.View({
-            template: "\n    <div class=\"row centered-text no-content\">\n        <div class=\"col-md-4\">{{ teama }}</div>\n        <div class=\"col-md-4\">{{ scorea }} - {{ scoreb }}</div>\n        <div class=\"col-md-4\">{{ teamb }}</div>\n    </div>\n    "
+            template: "\n    <div class=\"row centered-text no-content\">\n        <div class=\"col-xs-4\">{{ teama }}</div>\n        <div class=\"col-xs-4\">{{ scorea }} - {{ scoreb }}</div>\n        <div class=\"col-xs-4\">{{ teamb }}</div>\n    </div>\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], LivescoreMatch);
@@ -50,7 +50,7 @@ var DayGroupComponent = (function () {
             properties: ['data', 'matches']
         }),
         angular2_1.View({
-            template: "\n    <div class=\"row livegroup\">\n        <div class=\"row centered-text\">\n            <h4 class=\"livedate\">{{ date }}</h4>\n            <div class=\"col-md-4\"><b>Squadra A</b></div>\n            <div class=\"col-md-4\"><b>Risultato</b></div>\n            <div class=\"col-md-4\"><b>Squadra B</b></div>\n        </div>\n        <hr>\n        <livescore-match class=\"no-content\" *ng-for=\"#m of matches_data\" [data]=\"m\">\n        </livescore-match>\n    </div>\n    ",
+            template: "\n    <div class=\"row livegroup\">\n        <div class=\"row centered-text\">\n            <div class=\"col-xs-12\">\n                <h4 class=\"livedate\">{{ date }}</h4>\n            </div>\n            <div class=\"col-xs-4\"><b>Squadra A</b></div>\n            <div class=\"col-xs-4\"><b>Risultato</b></div>\n            <div class=\"col-xs-4\"><b>Squadra B</b></div>\n        </div>\n        <hr>\n        <livescore-match class=\"no-content\" *ng-for=\"#m of matches_data\" [data]=\"m\">\n        </livescore-match>\n    </div>\n    ",
             directives: [angular2_1.NgFor, LivescoreMatch]
         }), 
         __metadata('design:paramtypes', [])
@@ -76,7 +76,7 @@ var AppComponent = (function () {
             .toRx()
             .map(function (res) { return res.json(); });
         // Attenzione all'ordine delle chiamate!
-        request.subscribeOnError(function (error) { return alert(error); });
+        request.subscribeOnError(function (error) { return alert("Errore ajax " + error); });
         request.subscribeOnNext(function (data) { return _this.elaborateJson(data); });
         request.subscribeOnCompleted(function () { return console.debug(JSON.stringify(_this.last_update_str)); });
     };
@@ -97,7 +97,7 @@ var AppComponent = (function () {
             ]
         }),
         angular2_1.View({
-            template: "\n    <div class=\"row\">\n        <div class=\"col-md-6 col-lg-offset-3\">\n            <livescore-daygroup *ng-for=\"#g of dategroup_data\" [data]=\"g\">\n            <!-- A differenza di Polymer, non possiamo innestare i children\n            <livescore-match *ng-for=\"#m of g.matches\" [data]=\"m\"></livescore-match> -->\n            </livescore-daygroup>\n        </div>\n    </div>",
+            template: "\n    <div class=\"row\">\n        <div class=\"col-md-6 col-md-offset-3 col-xs-12\">\n            <livescore-daygroup *ng-for=\"#g of dategroup_data\" [data]=\"g\">\n            <!-- A differenza di Polymer, non possiamo innestare i children\n            <livescore-match *ng-for=\"#m of g.matches\" [data]=\"m\"></livescore-match> -->\n            </livescore-daygroup>\n        </div>\n    </div>",
             directives: [
                 DayGroupComponent,
                 LivescoreMatch,
