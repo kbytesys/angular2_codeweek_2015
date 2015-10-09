@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="it">
 
 <head>
     <meta charset="utf-8">
 
-    <title>reveal.js - The HTML Presentation Framework</title>
+    <title>Sviluppare dal futuro con Angular 2</title>
 
     <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
     <meta name="author" content="Hakim El Hattab">
@@ -215,7 +215,7 @@ phonecatApp.controller('PhoneListCtrl', function ($scope, $http) {
 
             <section>
                 <h2><img src="img/angular-logo.png" class="title-image"> Perché Angular 2 (e non 1)</h2>
-                <p>Il framework è stizza fortemente un occhio ai web components.</p>
+                <p>Il framework strizza fortemente un occhio ai web components.</p>
                 <pre><code data-trim contenteditable>
 &lt;!-- &quot;Cattivo esempio in Angular 1 --&gt;
 &lt;body&gt;
@@ -256,23 +256,168 @@ phonecatApp.controller('PhoneListCtrl', function ($scope, $http) {
         <section>
             <h2>Cosa vogliamo ottenere?</h2>
             <p>Nell'esempio che verrà proposto realizzeremo un livescore partendo da un feed json.</p>
+            <p>Codice dei demo e istruzioni al seguente indirizzo: <a href="https://github.com/kbytesys/angular2_codeweek_2015" target="_blank">https://github.com/kbytesys/angular2_codeweek_2015</a></p>
         </section>
         <section>
             <section>
-                <h2><img src="img/soccer-ball-clip-art-9c4enbocE.png" class="title-image"> Demo 1: risultato finale</h2>
-                Demo 1 illustrazione grafica
+                <h2><img src="img/angular-logo.png" class="title-image"> Demo 1: A tutto Ajax <img src="img/soccer-ball-clip-art-9c4enbocE.png" class="title-image"></h2>
+                <img src="img/demo1-0.png" style="width: 60%;">
             </section>
             <section>
-                Template angular
+                <p>Iniziamo a osservare come inserire il riferimento all'applicazione Angular nella pagina html.</p>
+                <pre><code data-trim contenteditable>
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-md-12&quot;&gt;
+        &lt;demo1 url=&quot;fakedata.json&quot;&gt;Loading...&lt;/demo1&gt;
+        &lt;script&gt;
+            System.import('demo1.js');
+        &lt;/script&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                </code></pre>
+                <ul>
+                    <li>L'applicazione usa un tag "web component-like"</li>
+                    <li>Il nome e il significato degli attributi sono personalizzati</li>
+                    <li>Caricamento dinamico dei file javascript se fate uso di
+                        <a href="https://github.com/systemjs/systemjs" target="_blank">systemjs</a> (opzionale)</li>
+                </ul>
             </section>
             <section>
-                Binding valori
+                <p>Costruiamo l'applicazione Angular</p>
+                <pre><code data-trim contenteditable>
+export class AppComponent {
+    url: string;
+    dategroup_data: Array&lt;JSON&gt;;
+    polling_id: number;
+    last_update_str: string;
+
+    constructor(http: Http, @Attribute('url') url: string) {
+        this.url = url;
+
+        this.fetchData(http);
+        this.polling_id = setInterval(
+            () =&gt; { this.fetchData(http) }, 10000
+        );
+    }
+                </code></pre>
+
+                <p>NOTA: se il decoratore @Attribute non funziona, date un occhiata a questo
+                    <a href="https://github.com/angular/angular/issues/1858" target="_blank"> bug</a>
+                    <img src="img/angry-face-emoticon-5.png" class="title-image">
             </section>
             <section>
-                Demo 1.1 trasformazione in tabelle
+                <p>La funzione di fetch dei dati</p>
+                <pre><code data-trim contenteditable>
+export class AppComponent {
+
+    fetchData(http: Http): void {
+        var request = http.get(this.url)
+            .toRx()
+            .map(res => res.json());
+        // Attenzione all'ordine delle chiamate!
+        request.subscribeOnError(
+                    error => alert("Errore ajax " + error));
+        request.subscribeOnNext(
+                    data => this.elaborateJson(data));
+        request.subscribeOnCompleted(
+            () => console.debug(JSON.stringify(this.last_update_str))
+        );
+    }
+                </code></pre>
+                <p>Promesse al posto di funzioni e callback di eventi</p>
             </section>
             <section>
-                Demo 1.1 fallimento
+                <h2><img src="img/js.png" class="title-image"> Ecmascript 6 Promises</h2>
+                <p>Le promesse permettono azioni ascincrone "nel futuro" con la possibilità di un effetto "catena"</p>
+                <img src="img/promises.png" style="width: 90%;">
+                <p><a href=" http://blog.millermedeiros.com/callbacks-promises-signals-and-events/" target="_blank">Qui</a>
+                    un buon articolo su eventi, callback, promesse e altro.</p>
+            </section>
+            <section>
+                <p>La funzione che elabora i dati</p>
+                <pre><code data-trim contenteditable>
+export class AppComponent {
+
+    elaborateJson(json_data): void {
+        if (json_data.lastupdate != this.last_update_str) {
+            this.last_update_str = json_data.lastupdate
+            this.dategroup_data = json_data.dategroups;
+        }
+    }
+                </code></pre>
+                <p>Il controllo sul lastupdate serve per evitare l'errata propagazione dei dati a ogni richiesta
+                sulla fonte json</p>
+            </section>
+              <section>
+                <p>Nel decoratore @Component vengno poste le informazioni base del componente</p>
+                <pre><code data-trim contenteditable>
+@Component({
+    selector: 'demo1',
+    viewBindings: [
+        HTTP_BINDINGS
+    ]
+})
+export class AppComponent {
+                </code></pre>
+                <p>La voce "selector" indica il nome del tag html con il quale esso verrà riferito</p>
+            </section>
+            <section>
+                <p>In @View inseriamo il necessario per la renderizzazione</p>
+                <pre><code data-trim contenteditable>
+@View({
+    template: `
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-md-6 col-md-offset-3 col-xs-12&quot;&gt;
+            &lt;livescore-daygroup *ng-for=&quot;#g of dategroup_data&quot;
+                                [data]=&quot;g&quot;/&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;`,
+    directives: [
+        DayGroupComponent,
+        NgFor
+    ]
+})
+export class AppComponent {
+                </code></pre>
+                <p>Livescore-daygroup (DayGroupComponent) è un componente figlio.</p>
+            </section>
+            <section>
+                <p>Il componente figlio indica i parametri in entrata, li elabora e/o li renderizza direttamente
+                nel template</p>
+                <pre><code data-trim contenteditable>
+@View([omissis])
+@Component({
+    selector: 'livescore-daygroup',
+    properties: ['data']
+})
+
+class DayGroupComponent {
+    date: string;
+    matches_data: JSON;
+    data: JSON;
+
+    onInit() {
+        this.date = this.data['group_date'];
+        this.matches_data = this.data['matches'];
+    }
+}
+                </code></pre>
+                <p>Ma come vengono passati i dati?</p>
+            </section>
+            <section>
+                <h2>One-Way Data Binding <img src="img/obsolete.png" class="title-image"></h2>
+                <img src="img/One_Way_Data_Binding.png" style="width: 80%;">
+            </section>
+            <section>
+                <h2><img src="img/angular-logo.png" class="title-image"> Two-Way Data Binding</h2>
+                <img src="img/Two_Way_Data_Binding.png" style="width: 80%;">
+            </section>
+            <section><h2><img src="img/angular-logo.png" class="title-image"> Binding nel livescore</h2>
+                <p>Dopo aver atteso un goal...</p>
+                    <img class="image-low-margin" src="img/demo1-1.png" style="width: 45%; vertical-align: middle">
+                    <i class="fa-arrow-right"></i>
+                    <img class="image-low-margin" src="img/demo1-2.png" style="width: 45%; vertical-align: middle">
+                <p>Il tutto senza aver in alcun modo "programmato" l'aggiornamento del risultato come avviene usualmente.</p>
             </section>
         </section>
         <section>
@@ -327,6 +472,8 @@ phonecatApp.controller('PhoneListCtrl', function ($scope, $http) {
         center: true,
 
         transition: 'slide',
+
+        zoomKey: 'shift',
 
         dependencies: [
             { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },

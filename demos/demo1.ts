@@ -39,7 +39,7 @@ class LivescoreMatch {
 
 @Component({
     selector: 'livescore-daygroup',
-    properties: ['data', 'matches']
+    properties: ['data']
 })
 @View({
     template: `
@@ -88,7 +88,6 @@ class DayGroupComponent {
     </div>`,
     directives: [
         DayGroupComponent,
-        LivescoreMatch,
         NgFor
     ]
 })

@@ -47,7 +47,7 @@ var DayGroupComponent = (function () {
     DayGroupComponent = __decorate([
         angular2_1.Component({
             selector: 'livescore-daygroup',
-            properties: ['data', 'matches']
+            properties: ['data']
         }),
         angular2_1.View({
             template: "\n    <div class=\"row livegroup\">\n        <div class=\"row centered-text\">\n            <div class=\"col-xs-12\">\n                <h4 class=\"livedate\">{{ date }}</h4>\n            </div>\n            <div class=\"col-xs-4\"><b>Squadra A</b></div>\n            <div class=\"col-xs-4\"><b>Risultato</b></div>\n            <div class=\"col-xs-4\"><b>Squadra B</b></div>\n        </div>\n        <hr>\n        <livescore-match class=\"no-content\" *ng-for=\"#m of matches_data\" [data]=\"m\">\n        </livescore-match>\n    </div>\n    ",
@@ -100,7 +100,6 @@ var AppComponent = (function () {
             template: "\n    <div class=\"row\">\n        <div class=\"col-md-6 col-md-offset-3 col-xs-12\">\n            <livescore-daygroup *ng-for=\"#g of dategroup_data\" [data]=\"g\">\n            <!-- A differenza di Polymer, non possiamo innestare i children\n            <livescore-match *ng-for=\"#m of g.matches\" [data]=\"m\"></livescore-match> -->\n            </livescore-daygroup>\n        </div>\n    </div>",
             directives: [
                 DayGroupComponent,
-                LivescoreMatch,
                 angular2_1.NgFor
             ]
         }), 
