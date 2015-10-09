@@ -199,6 +199,7 @@ class Shape {
                 <p>Il framework è stato riscritto da zero in Ecmascript 6, ripulendo e semplificando lo sviluppo dai
                 difetti di Angular.</p>
                 <pre><code data-trim contenteditable>
+// "Cattivo" esempio in Angular 1
 var phonecatApp = angular.module('phonecatApp', []);
 
 phonecatApp.controller('PhoneListCtrl', function ($scope, $http) {
@@ -212,25 +213,44 @@ phonecatApp.controller('PhoneListCtrl', function ($scope, $http) {
                 <p>La scrittura dei componenti è più ordinata e "naturale" e addio alle variabili '$'!</p>
             </section>
 
-            <body>
-
-            Write some text in textbox:
-            <input type="text" ng-model="sometext" />
-
-            <h1>Hello {{ sometext }}</h1>
-
-            <h4>Uppercase: {{ sometext | uppercase }}</h4>
-            <h4>Lowercase: {{ sometext | lowercase }}</h4>
-
-            </body>
             <section>
-                Angular2 e typescript
+                <h2><img src="img/angular-logo.png" class="title-image"> Perché Angular 2 (e non 1)</h2>
+                <p>Il framework è stizza fortemente un occhio ai web components.</p>
+                <pre><code data-trim contenteditable>
+&lt;!-- &quot;Cattivo esempio in Angular 1 --&gt;
+&lt;body&gt;
+    Write some text in textbox:
+    &lt;input type=&quot;text&quot; ng-model=&quot;sometext&quot; /&gt;
+
+    &lt;h1&gt;Hello {{ sometext }}&lt;/h1&gt;
+    &lt;h4&gt;Uppercase: {{ sometext | uppercase }}&lt;/h4&gt;
+    &lt;h4&gt;Lowercase: {{ sometext | lowercase }}&lt;/h4&gt;
+&lt;/body&gt;
+                </code></pre>
+                <p>Non vedremo più il DOM "sporcato" da attributi e codici speciali!</p>
+                </section>
+            <section>
+                <h2><img src="img/angular-logo.png" class="title-image"> Angular e Typescript <img src="img/typescript_logo.png" class="title-image"></h2>
+                <p>Per lo sviluppo utilizzeremo Typescript</p>
+                <ul>
+                    <li>Codice più ordinato e più object oriented</li>
+                    <li>Rilevazione di errori a "tempo di compilazione"</li>
+                    <li>Supporto al completamento automatico negli IDE</li>
+                </ul>
+                <p>La sintassi di Typescript va "nella direzione" di Ecmascript 6 e il compilatore genera all'occorrenza
+                codice ES 5 e 6.</p>
+                <p>Attualmente è la best choice per Angular 2.</p>
             </section>
             <section>
-                altenative ec5 ec5 darc
-            </section>
-            <section>
-                Allestire ambiente per lo sviluppo
+                <h2><img src="img/angular-logo.png" class="title-image"> Alternative a Typescript</h2>
+                <p>Sviluppare in Typescript è una scelta.</p>
+                <p>In alternativa possiamo utilizzare:</p>
+                <ul>
+                    <li><img src="img/js.png" class="title-image"> Ecmascript 5</li>
+                    <li><img src="img/js.png" class="title-image"> Ecmascript 6</li>
+                    <li><img src="img/dart-logo-400x400.png" class="title-image"> Dart</li>
+                </ul>
+                <p>La scelta non preclude la funzionalità, ma solo lo stile nello sviluppo delle applicazioni.</p>
             </section>
         </section>
         <section>
