@@ -123,19 +123,19 @@
                 <h2><img src="img/webcomponent_logo.svg" class="title-image"> Web Components</h2>
                 <p>Strutture complesse...</p>
                 <pre><code data-trim contenteditable>
-<div class="menu-container">
-    <ul class="main-menu">
-        <li><a href="#">Voce Menu 1</a></li>
-        <li><a href="#">Voce Menu 2</a></li>
-    </ul>
-</div>
+&lt;div class=&quot;menu-container&quot;&gt;
+    &lt;ul class=&quot;main-menu&quot;&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Voce Menu 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Voce Menu 2&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
                 </code></pre>
                 <p>...acquistano semantica</p>
                 <pre><code data-trim contenteditable>
-<menu>
-    <menu-voce url="#">Voce Menu 1</menu-voce>
-    <menu-voce url="#">Voce Menu 2</menu-voce>
-</menu>
+&lt;menu&gt;
+    &lt;menu-voce url=&quot;#&quot;&gt;Voce Menu 1&lt;/menu-voce&gt;
+    &lt;menu-voce url=&quot;#&quot;&gt;Voce Menu 2&lt;/menu-voce&gt;
+&lt;/menu&gt;
                 </code></pre>
                 <p>Per maggiori info: <a href="http://webcomponents.org" target="_blank">http://webcomponents.org</a></p>
             </section>
@@ -422,24 +422,91 @@ class DayGroupComponent {
         </section>
         <section>
             <section>
-                Demo 2: modifiche
+                <h2>Non sono tutte rose...</h2>
+                <p>Nel nostro demo l'applicazione Angular è stata così organizzata:</p>
             </section>
             <section>
-                Demo 2: tema su url esterno
+                <p>Perché non abbiamo innestato tutti componenti nel template di AppComponent?</p>
+                <pre><code data-trim contenteditable>
+&lt;livescore-daygroup *ng-for=&quot;#g of dategroup_data&quot; [data]=&quot;g&quot;&gt;
+    &lt;!-- Angular non è Polymer :( --&gt;
+    &lt;livescore-match *ng-for=&quot;#m of g.matches&quot; [data]=&quot;m&quot;/&gt;
+&lt;/livescore-daygroup&gt;
+                </code></pre>
+                <p>Tutto il contenuto all'interno del tag è solo un placeholder che viene sostituito. Deve essere il template del figlio
+                a caricare a sua volta gli altri componenti.</p>
             </section>
             <section>
-                Demo 2: risultato
+                <p>I tag dell'applicazione e dei componenti vengono inseriti nel DOM (come se fossero Web Components).</p>
+                <pre><code data-trim contenteditable>
+&lt;livescore-daygroup ...&gt;
+    &lt;table ...&gt;
+        &lt;thead&gt;...&lt;/thead&gt;
+        &lt;tbody&gt;
+        &lt;livescore-match ...&gt;
+            &lt;tr&gt;
+                &lt;td class=&quot;ng-binding&quot;&gt;Crotone&lt;/td&gt;
+                &lt;td class=&quot;ng-binding&quot;&gt;1 - 0&lt;/td&gt;
+                &lt;td class=&quot;ng-binding&quot;&gt;Salernitana&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/livescore-match&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/livescore-daygroup&gt;
+                </code></pre>
+                <p>Questo può mettere in crisi la costruzione di tabelle, causando "curiose" interpretazioni da
+                parte dei browser</p>
+            </section>
+            <section>
+                <img src="img/demo1.1-0.png" style="width: 60%;">
             </section>
         </section>
         <section>
             <section>
-                Demo3: componenti multipli
+                <h2>Migliore organizzazione</h2>
+                <p>L'esempio precedente è stato volutamente "frammentario"</p>
+                <pre><code data-trim contenteditable>
+// demo2.ts
+@View({
+    directives: [
+        NgFor,
+    ],
+    pipes: [MatchResultStringPipe],
+    templateUrl: 'demo2-template.html',
+})
+export class AppComponent {
+                </code></pre>
+                <p>Potevamo benissimo utilizzare un solo componente per tutta l'applicazione</p>
             </section>
             <section>
-                Demo3: modifiche
-            </section>
-            <section>
-                Demo3: dependency injection
+                <p>Possiamo separare il compito del programmatore
+                    da quello del web designer</p>
+                <pre><code data-trim contenteditable>
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-md-6 col-lg-offset-3&quot;&gt;
+        &lt;div class=&quot;row&quot; *ng-for=&quot;#g of dategroup_data&quot;&gt;
+            &lt;h4&gt;{{ g.group_date }}&lt;/h4&gt;
+            &lt;table id=&quot;demo1-table&quot; class=&quot;table table-striped&quot;&gt;
+                &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;Squadra A&lt;/th&gt;
+                    &lt;th&gt;Risultato&lt;/th&gt;
+                    &lt;th&gt;Squadra B&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;/thead&gt;
+                &lt;tbody&gt;
+                &lt;tr *ng-for=&quot;#m of g.matches&quot;&gt;
+                    &lt;td&gt;{{ m.teama_name }}&lt;/td&gt;
+                    &lt;td&gt;{{ m | matchResultString}}&lt;/td&gt;
+                    &lt;td&gt;{{ m.teamb_name }}&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;/tbody&gt;
+            &lt;/table&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                </code></pre>
+                <p>L'url può anche essere generato dinamicamente</p>
             </section>
         </section>
         <section>
