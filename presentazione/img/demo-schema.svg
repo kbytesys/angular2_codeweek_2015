@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="143.4807mm"
+   height="81.562225mm"
+   viewBox="0 0 508.39617 289.00001"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="demo-schema.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="134.72358"
+     inkscape:cy="128.20684"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1024"
+     inkscape:window-x="0"
+     inkscape:window-y="30"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Livello 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-157.12794,-48.933636)">
+    <rect
+       style="fill:#e0eaff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4136"
+       width="504.39615"
+       height="285"
+       x="159.12794"
+       y="50.933636"
+       rx="20"
+       ry="20" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:28px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="306.42856"
+       y="81.933632"
+       id="text4138"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4140"
+         x="306.42856"
+         y="81.933632">AppComponent</tspan></text>
+    <g
+       id="g4228"
+       transform="translate(2,0)">
+      <rect
+         ry="20"
+         rx="19.999998"
+         y="103.79078"
+         x="169.28572"
+         height="219.28572"
+         width="233.57144"
+         id="rect4142"
+         style="fill:#ebffe0;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4144"
+         y="129.86185"
+         x="178.68883"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:20.44485092px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="129.86185"
+           x="178.68883"
+           id="tspan4146"
+           sodipodi:role="line">DayGroupComponent</tspan></text>
+      <g
+         transform="translate(0,14)"
+         id="g4175">
+        <rect
+           style="fill:#ff8691;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect4169"
+           width="233.57141"
+           height="42.142857"
+           x="169.28572"
+           y="145.93362" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.10930061px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="201.88016"
+           y="173.85982"
+           id="text4171"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan4173"
+             x="201.88016"
+             y="173.85982">LivescoreMatch</tspan></text>
+      </g>
+      <g
+         id="g4175-6"
+         transform="translate(-0.2142836,55.357152)">
+        <rect
+           style="fill:#ff8691;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect4169-0"
+           width="233.57141"
+           height="42.142857"
+           x="169.28572"
+           y="145.93362" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.10930061px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="201.88016"
+           y="173.85982"
+           id="text4171-5"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan4173-7"
+             x="201.88016"
+             y="173.85982">LivescoreMatch</tspan></text>
+      </g>
+      <g
+         id="g4175-5"
+         transform="translate(-0.3571408,97.50001)">
+        <rect
+           style="fill:#ff8691;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect4169-1"
+           width="233.57141"
+           height="42.142857"
+           x="169.28572"
+           y="145.93362" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.10930061px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="201.88016"
+           y="173.85982"
+           id="text4171-8"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan4173-8"
+             x="201.88016"
+             y="173.85982">LivescoreMatch</tspan></text>
+      </g>
+    </g>
+    <g
+       transform="translate(248.96427,-0.071436)"
+       id="g4228-2">
+      <rect
+         ry="20"
+         rx="19.999998"
+         y="103.79078"
+         x="169.28572"
+         height="219.28572"
+         width="233.57144"
+         id="rect4142-5"
+         style="fill:#ebffe0;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4144-7"
+         y="129.86185"
+         x="178.68883"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:20.44485092px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="129.86185"
+           x="178.68883"
+           id="tspan4146-0"
+           sodipodi:role="line">DayGroupComponent</tspan></text>
+      <g
+         transform="translate(0,14)"
+         id="g4175-2">
+        <rect
+           style="fill:#ff8691;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect4169-8"
+           width="233.57141"
+           height="42.142857"
+           x="169.28572"
+           y="145.93362" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.10930061px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="201.88016"
+           y="173.85982"
+           id="text4171-1"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan4173-6"
+             x="201.88016"
+             y="173.85982">LivescoreMatch</tspan></text>
+      </g>
+      <g
+         id="g4175-6-1"
+         transform="translate(-0.2142836,55.357152)">
+        <rect
+           style="fill:#ff8691;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect4169-0-2"
+           width="233.57141"
+           height="42.142857"
+           x="169.28572"
+           y="145.93362" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.10930061px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="201.88016"
+           y="173.85982"
+           id="text4171-5-8"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan4173-7-1"
+             x="201.88016"
+             y="173.85982">LivescoreMatch</tspan></text>
+      </g>
+      <g
+         id="g4175-5-2"
+         transform="translate(-0.3571408,97.50001)">
+        <rect
+           style="fill:#ff8691;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect4169-1-9"
+           width="233.57141"
+           height="42.142857"
+           x="169.28572"
+           y="145.93362" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.10930061px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="201.88016"
+           y="173.85982"
+           id="text4171-8-5"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan4173-8-7"
+             x="201.88016"
+             y="173.85982">LivescoreMatch</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>
