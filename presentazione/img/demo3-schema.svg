@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="154.00827mm"
+   height="77.127296mm"
+   viewBox="0 0 545.69859 273.2857"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="demo3-schema.svg">
+  <defs
+     id="defs4">
+    <inkscape:path-effect
+       effect="skeletal"
+       id="path-effect4295"
+       is_visible="true"
+       pattern="m 157.12794,53.933636 c 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 z"
+       copytype="single_stretched"
+       prop_scale="1"
+       scale_y_rel="false"
+       spacing="0"
+       normal_offset="0"
+       tang_offset="0"
+       prop_units="false"
+       vertical_pattern="false"
+       fuse_tolerance="0" />
+    <inkscape:path-effect
+       effect="skeletal"
+       id="path-effect4287"
+       is_visible="true"
+       pattern="m 157.12794,53.933636 c 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 z"
+       copytype="single_stretched"
+       prop_scale="1"
+       scale_y_rel="false"
+       spacing="0"
+       normal_offset="0"
+       tang_offset="0"
+       prop_units="false"
+       vertical_pattern="false"
+       fuse_tolerance="0" />
+    <inkscape:path-effect
+       effect="skeletal"
+       id="path-effect4287-0"
+       is_visible="true"
+       pattern="m 157.12794,53.933636 c 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 z"
+       copytype="single_stretched"
+       prop_scale="1"
+       scale_y_rel="false"
+       spacing="0"
+       normal_offset="0"
+       tang_offset="0"
+       prop_units="false"
+       vertical_pattern="false"
+       fuse_tolerance="0" />
+    <inkscape:path-effect
+       effect="skeletal"
+       id="path-effect4295-9"
+       is_visible="true"
+       pattern="m 157.12794,53.933636 c 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 z"
+       copytype="single_stretched"
+       prop_scale="1"
+       scale_y_rel="false"
+       spacing="0"
+       normal_offset="0"
+       tang_offset="0"
+       prop_units="false"
+       vertical_pattern="false"
+       fuse_tolerance="0" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="270.70948"
+     inkscape:cy="115.34968"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1024"
+     inkscape:window-x="0"
+     inkscape:window-y="30"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Livello 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-157.92988,-51.790779)">
+    <g
+       id="g4261"
+       transform="translate(-63.571429,2.8571429)">
+      <rect
+         ry="20"
+         rx="20"
+         y="50.933636"
+         x="223.50131"
+         height="269.28571"
+         width="257.25327"
+         id="rect4136"
+         style="fill:#e0eaff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4138"
+         y="81.933632"
+         x="247.23048"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:28px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="81.933632"
+           x="247.23048"
+           id="tspan4140"
+           sodipodi:role="line">AppComponent</tspan></text>
+      <g
+         transform="translate(64.056503,26)"
+         id="g4251">
+        <rect
+           style="fill:#ebffe0;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect4142"
+           width="233.57144"
+           height="63.571434"
+           x="171.28572"
+           y="103.79078"
+           rx="19.999998"
+           ry="20" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:20.44485092px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="193.07974"
+           y="140.8674"
+           id="text4144"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan4146"
+             x="193.07974"
+             y="140.8674">LivescoreSummary</tspan></text>
+      </g>
+      <g
+         transform="translate(0,8)"
+         id="g4256">
+        <rect
+           style="fill:#ebffe0;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect4142-4"
+           width="233.57144"
+           height="63.571434"
+           x="235.34222"
+           y="212.57651"
+           rx="19.999998"
+           ry="20" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:20.44485092px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="270.13892"
+           y="251.67465"
+           id="text4144-6"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan4146-3"
+             x="270.13892"
+             y="251.67465">LivescoreSearch</tspan></text>
+      </g>
+    </g>
+    <g
+       id="g4280">
+      <rect
+         ry="19.999998"
+         rx="20"
+         y="90.0606"
+         x="479.4856"
+         height="194.28571"
+         width="222.14287"
+         id="rect4274"
+         style="fill:#ff8691;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:3.99999976;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4276"
+         y="195.83728"
+         x="490.70959"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24.13935661px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="195.83728"
+           x="490.70959"
+           id="tspan4278"
+           sodipodi:role="line">LivescoreService</tspan></text>
+    </g>
+    <g
+       id="g4297"
+       transform="translate(-12,0)"
+       style="fill:#d40000">
+      <path
+         inkscape:connector-curvature="0"
+         inkscape:original-d="m 531.41365,144.36222 c -40.86607,-19.79457 -101.2908,-16.99661 -136.42857,6.42857"
+         inkscape:path-effect="#path-effect4287"
+         id="path4285"
+         d="m 531.41365,144.36222 c -0.65362,1.3494 -8.1272,-1.40798 -20.34699,-4.01911 -12.89648,-2.75572 -28.70565,-4.78315 -48.51982,-4.03173 -0.42151,0.016 -0.84203,0.0331 -1.26153,0.0514 -13.10773,0.60264 -24.57414,2.39174 -34.72872,4.83528 -18.94459,4.5791 -30.60106,11.04838 -31.57151,9.59271 -0.92081,-1.38122 9.1371,-11.03836 29.21633,-17.74843 10.46872,-3.50944 22.77696,-6.00666 36.61579,-6.66696 0.44299,-0.0221 0.88718,-0.0425 1.33253,-0.0609 20.71965,-0.85834 38.06015,2.54019 50.88855,7.2541 12.46895,4.58184 18.91499,9.67957 18.37537,10.79362 z"
+         style="fill:#d40000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         inkscape:original-d="m 424.2708,161.50508 c -7.00974,-4.50626 -15.86483,-10.14923 -27.85715,-11.42857 0.43129,-10.01168 4.36926,-20.55305 6.42858,-27.14286"
+         inkscape:path-effect="#path-effect4295"
+         id="path4293"
+         d="m 424.2708,161.50508 c -0.7816,1.21582 -4.15282,0.32466 -9.51713,-1.80897 -4.89452,-1.94677 -12.78603,-5.54919 -19.95326,-7.02314 -0.38465,-0.0791 -0.76701,-0.15252 -1.14727,-0.2202 -0.51227,-7.16918 0.21957,-13.55416 1.36793,-18.33025 2.98079,-7.46475 6.36608,-11.64358 7.82116,-11.18887 1.84295,0.57592 1.28693,5.86846 0.17156,13.38759 -0.96012,2.98384 -3.00083,8.0064 -3.83963,11.37901 0.42346,0.0181 0.8461,0.0428 1.26785,0.0744 8.33046,0.62335 14.62566,3.76198 18.60654,6.7186 3.99,2.9634 5.93604,5.90148 5.22225,7.01182 z"
+         style="fill:#d40000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <g
+       id="g4297-4"
+       transform="matrix(-1,0,0,-1,908.87957,405.41072)"
+       style="fill:#44aa00">
+      <path
+         inkscape:connector-curvature="0"
+         inkscape:original-d="m 531.41365,144.36222 c -40.86607,-19.79457 -101.2908,-16.99661 -136.42857,6.42857"
+         inkscape:path-effect="#path-effect4287-0"
+         id="path4285-2"
+         d="m 531.41365,144.36222 c -0.65362,1.3494 -8.1272,-1.40798 -20.34699,-4.01911 -12.89648,-2.75572 -28.70565,-4.78315 -48.51982,-4.03173 -0.42151,0.016 -0.84203,0.0331 -1.26153,0.0514 -13.10773,0.60264 -24.57414,2.39174 -34.72872,4.83528 -18.94459,4.5791 -30.60106,11.04838 -31.57151,9.59271 -0.92081,-1.38122 9.1371,-11.03836 29.21633,-17.74843 10.46872,-3.50944 22.77696,-6.00666 36.61579,-6.66696 0.44299,-0.0221 0.88718,-0.0425 1.33253,-0.0609 20.71965,-0.85834 38.06015,2.54019 50.88855,7.2541 12.46895,4.58184 18.91499,9.67957 18.37537,10.79362 z"
+         style="fill:#44aa00;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         inkscape:original-d="m 424.2708,161.50508 c -7.00974,-4.50626 -15.86483,-10.14923 -27.85715,-11.42857 0.43129,-10.01168 4.36926,-20.55305 6.42858,-27.14286"
+         inkscape:path-effect="#path-effect4295-9"
+         id="path4293-5"
+         d="m 424.2708,161.50508 c -0.7816,1.21582 -4.15282,0.32466 -9.51713,-1.80897 -4.89452,-1.94677 -12.78603,-5.54919 -19.95326,-7.02314 -0.38465,-0.0791 -0.76701,-0.15252 -1.14727,-0.2202 -0.51227,-7.16918 0.21957,-13.55416 1.36793,-18.33025 2.98079,-7.46475 6.36608,-11.64358 7.82116,-11.18887 1.84295,0.57592 1.28693,5.86846 0.17156,13.38759 -0.96012,2.98384 -3.00083,8.0064 -3.83963,11.37901 0.42346,0.0181 0.8461,0.0428 1.26785,0.0744 8.33046,0.62335 14.62566,3.76198 18.60654,6.7186 3.99,2.9634 5.93604,5.90148 5.22225,7.01182 z"
+         style="fill:#44aa00;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+  </g>
+</svg>

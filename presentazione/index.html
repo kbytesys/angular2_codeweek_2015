@@ -349,7 +349,7 @@ export class AppComponent {
                 sulla fonte json</p>
             </section>
               <section>
-                <p>Nel decoratore @Component vengno poste le informazioni base del componente</p>
+                <p>Nel decoratore @Component vengono poste le informazioni base del componente</p>
                 <pre><code data-trim contenteditable>
 @Component({
     selector: 'demo1',
@@ -512,14 +512,102 @@ export class AppComponent {
         </section>
         <section>
             <section>
-                Demo4: routing
+                <p>Vogliamo aggiungere una nuova funzionalità...</p>
+                <img src="img/demo3-1.png" style="width: 75%;">
             </section>
             <section>
-                Demo3: modifiche
+                <p>Specifiche:</p>
+                <ul>
+                    <li>Devono essere realizzati due diversi componenti</li>
+                    <li>Le chiamate ajax non devono essere duplicate</li>
+                    <li>Il componente di ricerca non deve memorizzare i dati</li>
+                </ul>
             </section>
             <section>
-                Demo3: routing angular
+                <h2><img src="img/angular-logo.png" class="title-image"> I servizi in Angular</h2>
+                <img src="img/demo3-schema.svg" style="width: 80%;">
+                <p>In Angular 2 i servizi sono semplici classi</p>
             </section>
+            <section>
+                <h2>La classe LivescoreService</h2>
+                <pre><code data-trim contenteditable>
+@Injectable()
+class LivescoreService {
+    [...]
+    updated = new EventEmitter();
+
+    fetchData(http: Http, url: string): void { [...] }
+    elaborateJson(json_data): void { [...] }
+
+    getUpdatedEmitter() {
+        return this.updated.toRx();
+    }
+
+    searchMatch(searchString: string): JSON { [...] }
+}
+                </code></pre>
+                <p>L'EventEmitter permette di generare eventi che possono essere catturati dalle promesse che lo hanno sottoscritto</p>
+            </section>
+            <section>
+                <p>I componenti ricevono il servizio nel costruttore...</p>
+                <pre><code data-trim contenteditable>
+class LivescoreSummaryComponent {
+    dategroup_data: Array&lt;JSON&gt;;
+    livescoreService: LivescoreService;
+
+    constructor(livescoreService: LivescoreService) {
+        this.livescoreService = livescoreService;
+        this.livescoreService.getUpdatedEmitter()
+            .subscribe((data) => this.dategroup_data=data);
+    }
+}
+                </code></pre>
+                <p>...ma non saremo noi a dover passare l'oggetto manualmente!</p>
+            </section>
+            <section>
+                <h2><img src="img/angular-logo.png" class="title-image"> Dependency Injection</h2>
+                <img src="img/di-in-angular2-5.svg" style="width: 70%;">
+                <p><a href="http://blog.thoughtram.io/angular/2015/05/18/dependency-injection-in-angular-2.html">Qui</a> per maggiori informazioni</p>
+            </section>
+            <section>
+                <p>Un modo semplice per definire la d/i in Angular è configurare l'injector nella funzione di bootstrap</p>
+                <pre><code data-trim contenteditable>
+bootstrap(
+    DemoApp4Compnent,
+    [
+        ROUTER_BINDINGS,
+        bind(APP_BASE_HREF).toValue(location.pathname),
+        HTTP_BINDINGS,
+        LivescoreService
+    ]
+);
+                </code></pre>
+                <p>LivescoreService è un Singleton!</p>
+                <p>Potete cambiare la modalità giocando con la funzione bind e/o usando un factory</p>
+            </section>
+            <section>
+                <h2><img src="img/angular-logo.png" class="title-image"> Una parentesi sul data input</h2>
+                <pre><code data-trim contenteditable>
+@View({
+    template: `&lt;h3&gt;La tua squadra vince?&lt;/h3&gt;
+    &lt;input type=&quot;text&quot; #search_text placeholder=&quot;Nome Squadra&quot;
+                    (keyup.enter)=&quot;search(search_text.value)&quot;&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot;
+                    (click)=&quot;search(search_text.value)&quot;&gt;Cerca&lt;/button&gt;
+    &lt;p class=&quot;demo3-risultato&quot;&gt;{{ message }}&lt;/p&gt;`
+})
+class LivescoreSearchComponent {
+    search(search_text) {
+        var match = this.livescoreService.searchMatch(search_text);
+        if(match) {
+            if(match['status'] != 'live') {
+                this.message = &quot;Partita non iniziata.&quot;;
+            }
+                </code></pre>
+                <p>Angular2 fornisce una serie di eventi base (click, keyup, ecc...) che possono essere reindirizzati
+                verso funzioni della classe componente</p>
+            </section>
+
         </section>
         <section>
             <h2>Conclusioni</h2>
