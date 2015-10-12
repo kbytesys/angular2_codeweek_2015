@@ -610,6 +610,35 @@ class LivescoreSearchComponent {
 
         </section>
         <section>
+            <section>
+                <h2>Routing che passione</h2>
+                <p>Vogliamo visualizzare i componenti dell'applicazione selezionandoli da un menù</p>
+                <img src="img/demo4-1.png" style="width: 40%; vertical-align: middle">
+                <i class="fa-arrow-right"></i>
+                <img src="img/demo4-2.png" style="width: 40%; vertical-align: middle">
+            </section>
+            <section>
+                <h2><img src="img/angular-logo.png" class="title-image"> Il routing di Angular2</h2>
+                <pre><code data-trim contenteditable>
+// template
+&lt;div&gt;
+    &lt;a [router-link]=&quot;['./Home']&quot;&gt;Home&lt;/a&gt;
+    &lt;a [router-link]=&quot;['./Risultati']&quot;&gt;Risultati&lt;/a&gt;
+    &lt;hr&gt;
+    &lt;router-outlet&gt;&lt;/router-outlet&gt;
+&lt;/div&gt;
+
+// codice
+@RouteConfig([
+    {path: '/', component: LivescoreSearchComponent, as: 'Home'},
+    {path: '/summary', component: LivescoreSummaryComponent, as: 'Risultati'}
+])
+class DemoApp4Compnent {
+                </code></pre>
+                <p>I componenti vengono inizializzati e distrutti quando si entra o esce dalla loro rotta</p>
+            </section>
+        </section>
+        <section>
             <h2>Conclusioni</h2>
             <p>Angular 2 permette di "assaporare" le tecnologie che saranno realmente in auge nei prossimi anni...</p>
             <img src="img/standards.png" style="width: 60%;">
