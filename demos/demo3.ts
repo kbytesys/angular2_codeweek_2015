@@ -38,13 +38,12 @@ class LivescoreService {
 
     fetchData(http: Http, url: string): void {
         var request = http.get(url)
-            .toRx()
-            .map(res => res.json());
-        // Attenzione all'ordine delle chiamate!
-        request.subscribeOnError(error => alert("Errore ajax " + error));
-        request.subscribeOnNext(data => this.elaborateJson(data));
-        request.subscribeOnCompleted(
-            () => console.debug(this.last_update_str)
+                .map(res => res.json());
+
+        request.subscribe(
+                data => this.elaborateJson(data),
+                error => alert("Errore ajax " + error),
+                () => console.debug(this.last_update_str)
         );
     }
 
@@ -181,6 +180,7 @@ class DemoApp3Compnent {
 bootstrap(
     DemoApp3Compnent,
     [
+        ElementRef,
         HTTP_BINDINGS,
         LivescoreService
     ]

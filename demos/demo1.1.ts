@@ -114,14 +114,12 @@ export class AppComponent {
 
     fetchData(http: Http): void {
         var request = http.get(this.url)
-            .toRx()
             .map(res => res.json());
-        // Attenzione all'ordine delle chiamate!
-        request.subscribeOnError(error => alert("Errore ajax " + error));
-        request.subscribeOnNext(data => this.elaborateJson(data));
-        request.subscribeOnCompleted(
-            () => console.debug(JSON.stringify(this.last_update_str))
-        );
+
+        request.subscribe(
+                data => this.elaborateJson(data),
+                error => alert(error),
+            () => console.debug(JSON.stringify(this.last_update_str)));
     }
 
     stopFetch(): void {
@@ -136,4 +134,7 @@ export class AppComponent {
     }
 }
 
-bootstrap(AppComponent);
+bootstrap(AppComponent, [
+        ElementRef
+    ]
+);

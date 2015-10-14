@@ -44,12 +44,8 @@ var LivescoreService = (function () {
     LivescoreService.prototype.fetchData = function (http, url) {
         var _this = this;
         var request = http.get(url)
-            .toRx()
             .map(function (res) { return res.json(); });
-        // Attenzione all'ordine delle chiamate!
-        request.subscribeOnError(function (error) { return alert("Errore ajax " + error); });
-        request.subscribeOnNext(function (data) { return _this.elaborateJson(data); });
-        request.subscribeOnCompleted(function () { return console.debug(_this.last_update_str); });
+        request.subscribe(function (data) { return _this.elaborateJson(data); }, function (error) { return alert("Errore ajax " + error); }, function () { return console.debug(_this.last_update_str); });
     };
     LivescoreService.prototype.stopFetch = function () {
         clearInterval(this.polling_id);
@@ -173,6 +169,7 @@ var DemoApp3Compnent = (function () {
     return DemoApp3Compnent;
 })();
 angular2_1.bootstrap(DemoApp3Compnent, [
+    angular2_1.ElementRef,
     http_1.HTTP_BINDINGS,
     LivescoreService
 ]);
