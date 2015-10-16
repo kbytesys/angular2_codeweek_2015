@@ -9,6 +9,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 // Typescript
 var angular2_1 = require('angular2/angular2');
 var http_1 = require('angular2/http');
@@ -147,7 +150,6 @@ var DemoApp3Compnent = (function () {
     // https://github.com/angular/angular/issues/1858
     // constructor(http: Http, @Attribute('url') url: string) {
     function DemoApp3Compnent(livescoreService, elementRef) {
-        this.elementRef = elementRef;
         // https://github.com/angular/angular/issues/1858
         // this.url = url;
         var native = elementRef.nativeElement;
@@ -163,13 +165,13 @@ var DemoApp3Compnent = (function () {
                 LivescoreSummaryComponent,
                 LivescoreSearchComponent
             ]
-        }), 
+        }),
+        __param(1, angular2_1.Inject(angular2_1.ElementRef)), 
         __metadata('design:paramtypes', [LivescoreService, angular2_1.ElementRef])
     ], DemoApp3Compnent);
     return DemoApp3Compnent;
 })();
 angular2_1.bootstrap(DemoApp3Compnent, [
-    angular2_1.ElementRef,
     http_1.HTTP_BINDINGS,
     LivescoreService
 ]);

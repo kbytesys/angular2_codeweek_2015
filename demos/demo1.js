@@ -9,6 +9,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 var angular2_1 = require('angular2/angular2');
 var http_1 = require('angular2/http');
 var LivescoreMatch = (function () {
@@ -62,10 +65,9 @@ var AppComponent = (function () {
     // constructor(http: Http, @Attribute('url') url: string) {
     function AppComponent(http, elementRef) {
         var _this = this;
-        this.elementRef = elementRef;
         // https://github.com/angular/angular/issues/1858
         // this.url = url;
-        var native = this.elementRef.nativeElement;
+        var native = elementRef.nativeElement;
         this.url = native.getAttribute('url');
         this.fetchData(http);
         this.polling_id = setInterval(function () { _this.fetchData(http); }, 10000);
@@ -98,13 +100,12 @@ var AppComponent = (function () {
                 DayGroupComponent,
                 angular2_1.NgFor
             ]
-        }), 
+        }),
+        __param(1, angular2_1.Inject(angular2_1.ElementRef)), 
         __metadata('design:paramtypes', [http_1.Http, angular2_1.ElementRef])
     ], AppComponent);
     return AppComponent;
 })();
 exports.AppComponent = AppComponent;
-angular2_1.bootstrap(AppComponent, [
-    angular2_1.ElementRef
-]);
+angular2_1.bootstrap(AppComponent);
 //# sourceMappingURL=demo1.js.map

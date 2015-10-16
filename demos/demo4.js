@@ -9,6 +9,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 // Typescript
 var angular2_1 = require('angular2/angular2');
 var http_1 = require('angular2/http');
@@ -151,7 +154,6 @@ var LivescoreSearchComponent = (function () {
 })();
 var DemoApp4Compnent = (function () {
     function DemoApp4Compnent(livescoreService, elementRef) {
-        this.elementRef = elementRef;
         var native = elementRef.nativeElement;
         // Troppo pigro per una funzione decente
         this.url = location.pathname.replace('demo4.html', native.getAttribute('url'));
@@ -170,13 +172,13 @@ var DemoApp4Compnent = (function () {
         router_1.RouteConfig([
             { path: '/', component: LivescoreSearchComponent, as: 'Home' },
             { path: '/summary', component: LivescoreSummaryComponent, as: 'Risultati' }
-        ]), 
+        ]),
+        __param(1, angular2_1.Inject(angular2_1.ElementRef)), 
         __metadata('design:paramtypes', [LivescoreService, angular2_1.ElementRef])
     ], DemoApp4Compnent);
     return DemoApp4Compnent;
 })();
 angular2_1.bootstrap(DemoApp4Compnent, [
-    angular2_1.ElementRef,
     router_1.ROUTER_BINDINGS,
     angular2_1.bind(router_1.APP_BASE_HREF).toValue(location.pathname),
     http_1.HTTP_BINDINGS,

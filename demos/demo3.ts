@@ -169,7 +169,7 @@ class LivescoreSearchComponent {
 class DemoApp3Compnent {
     // https://github.com/angular/angular/issues/1858
     // constructor(http: Http, @Attribute('url') url: string) {
-    constructor(livescoreService: LivescoreService, public elementRef: ElementRef) {
+    constructor(livescoreService: LivescoreService, @Inject(ElementRef) elementRef: ElementRef) {
         // https://github.com/angular/angular/issues/1858
         // this.url = url;
         var native = elementRef.nativeElement;
@@ -180,7 +180,6 @@ class DemoApp3Compnent {
 bootstrap(
     DemoApp3Compnent,
     [
-        ElementRef,
         HTTP_BINDINGS,
         LivescoreService
     ]

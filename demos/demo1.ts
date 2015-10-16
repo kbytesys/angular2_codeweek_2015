@@ -1,4 +1,4 @@
-import {Component, View, Attribute, bootstrap, ElementRef, Injector, NgFor, Inject, bind} from 'angular2/angular2';
+import {Component, View, Attribute, bootstrap, ElementRef, Injector, Inject, NgFor, bind} from 'angular2/angular2';
 import {XHRBackend, BaseRequestOptions, Http, HTTP_BINDINGS} from 'angular2/http';
 
 @Component({
@@ -99,10 +99,10 @@ export class AppComponent {
 
     // https://github.com/angular/angular/issues/1858
     // constructor(http: Http, @Attribute('url') url: string) {
-    constructor(http: Http, public elementRef: ElementRef) {
+    constructor(http: Http, @Inject(ElementRef) elementRef: ElementRef) {
         // https://github.com/angular/angular/issues/1858
         // this.url = url;
-        var native = this.elementRef.nativeElement;
+        var native = elementRef.nativeElement;
         this.url = native.getAttribute('url');
 
         this.fetchData(http);
@@ -131,7 +131,4 @@ export class AppComponent {
     }
 }
 
-bootstrap(AppComponent, [
-        ElementRef
-    ]
-);
+bootstrap(AppComponent);

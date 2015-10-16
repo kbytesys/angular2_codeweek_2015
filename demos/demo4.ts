@@ -170,7 +170,7 @@ class LivescoreSearchComponent {
 ])
 class DemoApp4Compnent {
     url: string;
-    constructor(livescoreService: LivescoreService, public elementRef: ElementRef) {
+    constructor(livescoreService: LivescoreService, @Inject(ElementRef) elementRef: ElementRef) {
         var native = elementRef.nativeElement;
         // Troppo pigro per una funzione decente
         this.url = location.pathname.replace('demo4.html', native.getAttribute('url'));
@@ -182,7 +182,6 @@ class DemoApp4Compnent {
 bootstrap(
     DemoApp4Compnent,
     [
-        ElementRef,
         ROUTER_BINDINGS,
         bind(APP_BASE_HREF).toValue(location.pathname),
         HTTP_BINDINGS,
