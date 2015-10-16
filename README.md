@@ -19,7 +19,7 @@ che potete anche aggiungere come comando nel vostro .bashrc:
     
 Ora entrate nella directory demos ed eseguite il comando per importare i typings:
 
-    tsd install angular2 angular2/http angular2/router es6-promise rx rx-lite --save
+    tsd install angular2 angular2/http angular2/router rx rx-lite --save
     
 Ora l'ambiente è pronto per l'uso.
 
